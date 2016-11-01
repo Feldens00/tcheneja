@@ -52,3 +52,43 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'HomeController';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+
+//rotas dos Usuarios
+
+$route['user'] = 'UserController';
+$route['update-sponsor'] = 'SponsorController/update';
+$route['visit'] = 'UserController/visit';
+$route['create-visit'] = 'UserController/create';
+
+
+//rotas das Entidades
+
+$route['update-sponsor-form/(:num)'] = 'SponsorController/update_form/$1';
+$route['update-sponsor'] = 'SponsorController/update';
+
+//rotas das Bandas
+
+
+$route['update-band-form/(:num)'] = 'BandController/update_form/$1';
+$route['update-band'] = 'BandController/update';
+$route['band-music/(:num)'] = 'BandController/band_music/$1';
+$route['delete-music-band/(:num)/(:any)'] = 'BandController/deleteMusic/$1/$2';
+//rotas das Equipes
+
+$route['update-music-form/(:num)'] = 'MusicController/update_form/$1';
+$route['update-music'] = 'MusicController/update';
+$route['download/(:num)'] = 'MusicController/download/$1';
+//rotas de Pessoas
+
+$route['update-event-form/(:num)'] = 'EventController/update_form/$1';
+$route['update-event'] = 'EventController/update';
+$route['delete-event-band/(:num)/(:any)'] = 'EventController/deleteBand/$1/$2';
+$route['delete-event-sponsor/(:num)/(:any)'] = 'EventController/deleteSponsor/$1/$2';
+$route['info-event/(:num)'] = 'EventController/call_infoEventView/$1/';
+
+//rotas do login
+$route['login'] = 'loginController';
+$route['login-sigin'] = 'loginController/sigin';
+$route['logout'] = 'loginController/logout';
+

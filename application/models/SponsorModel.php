@@ -16,4 +16,16 @@ class SponsorModel extends CI_Model {
 	return $this->db->insert($this->table, $sponsor);
 	}
 
+	public function update($sponsor){
+		$this->db->where('id_sponsor', $sponsor['id_sponsor']);
+		return $this->db->update($this->table, $sponsor);
+	}
+
+	public function delete($sponsor){
+		$this->db->where('id_sponsor', $sponsor['id_sponsor']);
+        $dados= $this->db->get('sponsors')->row();
+        $url= $dados->url;
+		unlink($url);
+		return $this->db->delete($this->table, $sponsor);
+	}
 }
